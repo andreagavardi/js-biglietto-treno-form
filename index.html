@@ -18,29 +18,30 @@
             calcola il prezzo del tuo biglietto
         </h2>
 
-    <form id="dati_passeggero"  class="row g-3 align-items-end justify-content-center bg-white w-75 mx-auto rounded py-5">
+    <div id="dati_passeggero"  class="row g-3 align-items-end justify-content-center bg-white w-75 mx-auto rounded py-5">
         <div class="col-md-4 d-flex flex-column align-self-center">
             <label for="nome_utente" class="form-label text-center">Nome Cognome</label>
             <input type="text" class="form-control" id="nome_utente">
         </div>
         <div class="col-md-4 d-flex flex-column align-self-center">
-            <label for="età_utente" class="form-label text-center">Km da percorrere</label>
-            <input type="number" class="form-control" id="km_percorso">
+            <label for="km_percorso" class="form-label text-center">Km da percorrere</label>
+            <input type="text" class="form-control" id="km_percorso">
         </div>
         <div id="selection">
             <label for="età" class="form-label text-center">Fascia d'età</label>
             <select class="form-select  d-flex flex-column align-item-center rounded" aria-label="Fascia di età">
-                <option value="1">Maggiorenne</option>
-                <option value="2">Minorenne</option>
-                <option value="3">Over 65</option>
+                <option value="maggiorenne"> 18+ </option>
+                <option value="minorenne"> minorenne </option>
+                <option value="over65">Over 65</option>
             </select>
         </div>
 
         <div class=" validazione col-md-12  d-flex justify-content-center mt-3 ">
-            <button class=" genera btn btn_empty">Genera</button>
-            <button class="btn btn_empty">Annulla</button>
+            <input type ="submit" class=" genera btn btn_empty" value ='Genera'>
+            <input type ="submit" class=" annulla btn btn_empty" value ='Annulla'>
+      
         </div>
-    </form>
+    </div>
 
     <h2 class="text-white text-center text-uppercase mt-3">
         il tuo biglietto
@@ -56,6 +57,7 @@
        </div>
        <div class="col">
            <h5>Offerta</h5>
+           <span id="offerta">  </span>
        </div>
        <div class="col">
             <h5>Carrozza</h5>

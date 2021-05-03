@@ -10,23 +10,57 @@ Prezzo calcolato
 Categoria selezionata dall'utente
 Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form. */
 
-var nomeUtenteEl = document.getElementById("nome_utente");
-var kmUtenteEl = document.getElementById("km_percorso");
-
-//document.getElementById("nome_utente").value
-
+var nomeUtenteEl = document.getElementById("utente");
+var offertaEl = document.getElementById("offerta");
+var prezzoEl = document.getElementById("prezzo");
 var bottoneGenera = document.querySelector(".validazione .genera");
-// bottoneGenera.addEventListener('click' )
-console.log(bottoneGenera);
+
+
 
 // numero casuale carrozza
 var numCarrozza = Math.floor(Math.random()*(12-1))+1;
 var carrozzaEl = document.getElementById("carrozza");
-carrozzaEl.innerHTML = numCarrozza;
+
 
 // numero casuale treno
 var codiceTreno = Math.floor(Math.random()*(100000-90000))+90000;
-console.log(codiceTreno);
 var trenoEl = document.getElementById("cp");
-trenoEl.innerHTML = codiceTreno;
+
+
+var etaUtente = document.querySelector(".form-select").value;
+var prezzoBiglietto = document.getElementById("km_percorso").value;
+
+bottoneGenera.addEventListener('click', 
+function(){
+ nomeUtenteEl.innerHTML = document.getElementById("nome_utente").value;
+ prezzoEl.innerHTML = (document.getElementById("km_percorso").value * 0.25);
+ offertaEl.innerHTML = ' sconto ' + document.querySelector(".form-select").value;
+ carrozzaEl.innerHTML = numCarrozza;
+ trenoEl.innerHTML = codiceTreno;
+});
+
+var prezzoScontato = prezzoBiglietto * 0.6;
+console.log(prezzoScontato);
+
+
+
+
+//prezzo scontato in base all'età
+
+//  if (etaUtente == 'minorenne') {
+//     //va applicato uno sconto del 20% per i minorenn
+//     prezzoScontato=prezzoChilometrico*0.8;
+//     console.log(prezzoScontato);
+
+//     } else if (etaUtente =='over65' ) {
+//     //va applicato uno sconto del 40% per gli over 65.
+//     prezzoScontato = prezzoChilometrico * 0.6;
+//     console.log(prezzoScontato);
+
+//     } else {
+//         prezzoScontato=prezzoChilometrico;
+//         console.log(prezzoScontato);
+
+//         }
+ 
 
