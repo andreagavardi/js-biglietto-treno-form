@@ -11,4 +11,22 @@ Categoria selezionata dall'utente
 Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form. */
 
 var nomeUtenteEl = document.getElementById("nome_utente");
-var kmUtenteEl = documen.getElementById("km_percorso");
+var kmUtenteEl = document.getElementById("km_percorso");
+
+//document.getElementById("nome_utente").value
+
+var bottoneGenera = document.querySelector(".validazione .genera");
+// bottoneGenera.addEventListener('click' )
+console.log(bottoneGenera);
+
+// numero casuale carrozza
+var numCarrozza = Math.floor(Math.random()*(12-1))+1;
+var carrozzaEl = document.getElementById("carrozza");
+carrozzaEl.innerHTML = numCarrozza;
+
+// numero casuale treno
+var codiceTreno = Math.floor(Math.random()*(100000-90000))+90000;
+console.log(codiceTreno);
+var trenoEl = document.getElementById("cp");
+trenoEl.innerHTML = codiceTreno;
+
