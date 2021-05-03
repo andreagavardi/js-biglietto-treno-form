@@ -33,7 +33,7 @@ var prezzoBiglietto = document.getElementById("km_percorso").value;
 bottoneGenera.addEventListener('click', 
 function(){
  nomeUtenteEl.innerHTML = document.getElementById("nome_utente").value;
- prezzoEl.innerHTML = (document.getElementById("km_percorso").value * 0.25);
+ prezzoEl.innerHTML = (document.getElementById("km_percorso").value * 0.25) + '€';
  offertaEl.innerHTML = ' sconto ' + document.querySelector(".form-select").value;
  carrozzaEl.innerHTML = numCarrozza;
  trenoEl.innerHTML = codiceTreno;
