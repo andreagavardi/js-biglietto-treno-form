@@ -27,16 +27,40 @@ var codiceTreno = Math.floor(Math.random()*(100000-90000))+90000;
 var trenoEl = document.getElementById("cp");
 
 
-var etaUtente = document.querySelector(".form-select").value;
-var prezzoBiglietto = document.getElementById("km_percorso").value;
-
 bottoneGenera.addEventListener('click', 
 function(){
  nomeUtenteEl.innerHTML = document.getElementById("nome_utente").value;
- prezzoEl.innerHTML = (document.getElementById("km_percorso").value * 0.25) + '€';
- offertaEl.innerHTML = ' sconto ' + document.querySelector(".form-select").value;
+ 
+ var prezzoBiglietto = document.getElementById("km_percorso").value;
+ var prezzoKilometrico = prezzoBiglietto * 0.25;
+ var prezzoScontato;
+ 
+ var etaUtente = document.querySelector(".form-select").value;
+
+    if (etaUtente == 'minorenne') {
+    //va applicato uno sconto del 20% per i minorenn
+    prezzoScontato=prezzoKilometrico * 0.8;
+    messaggioSconto = 'sconto 20%';
+    console.log(prezzoScontato);
+
+    } else if (etaUtente =='over65' ) {
+    //va applicato uno sconto del 40% per gli over 65.
+    prezzoScontato = prezzoKilometrico * 0.6;
+    messaggioSconto = 'sconto 40%';
+    console.log(prezzoScontato);
+
+    }  else {
+        prezzoScontato = prezzoKilometrico;
+         messaggioSconto = 'nessuno sconto applicato';
+        console.log(prezzoScontato);
+
+        }
+
+ prezzoEl.innerHTML = prezzoScontato + '€';
+ offertaEl.innerHTML = messaggioSconto;
  carrozzaEl.innerHTML = numCarrozza;
  trenoEl.innerHTML = codiceTreno;
+ 
 });
 
 
@@ -44,30 +68,31 @@ bottoneAnnulla.addEventListener('click',
 function(){
  document.getElementById("nome_utente").value = "";
  document.getElementById("km_percorso").value = "";
- 
+ offertaEl.innerHTML = "";
+ carrozzaEl.innerHTML = "";
+ trenoEl.innerHTML = "";
+ prezzoEl.innerHTML = "";
+ nomeUtenteEl.innerHTML = "";
 });
-var prezzoScontato = prezzoBiglietto * 0.6;
-console.log(prezzoScontato);
 
 
 
 
 //prezzo scontato in base all'età
+    /*   if (etaUtente == 'minorenne') {
+    //va applicato uno sconto del 20% per i minorenn
+    prezzoScontato=prezzoKilometrico*0.8;
+    console.log(prezzoScontato);
 
-//  if (etaUtente == 'minorenne') {
-//     //va applicato uno sconto del 20% per i minorenn
-//     prezzoScontato=prezzoChilometrico*0.8;
-//     console.log(prezzoScontato);
+    } else if (etaUtente =='over65' ) {
+    //va applicato uno sconto del 40% per gli over 65.
+    prezzoScontato = prezzoKilometrico * 0.6;
+    console.log(prezzoScontato);
 
-//     } else if (etaUtente =='over65' ) {
-//     //va applicato uno sconto del 40% per gli over 65.
-//     prezzoScontato = prezzoChilometrico * 0.6;
-//     console.log(prezzoScontato);
+    }  else {
+        prezzoScontato = prezzoKilometrico;
+        console.log(prezzoScontato);
 
-//     } else {
-//         prezzoScontato=prezzoChilometrico;
-//         console.log(prezzoScontato);
-
-//         }
+        }
+         */
  
-
