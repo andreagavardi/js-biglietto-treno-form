@@ -14,7 +14,7 @@ var nomeUtenteEl = document.getElementById("utente");
 var offertaEl = document.getElementById("offerta");
 var prezzoEl = document.getElementById("prezzo");
 var bottoneGenera = document.querySelector(".validazione .genera");
-
+var bottoneAnnulla = document.querySelector(".validazione .annulla");
 
 
 // numero casuale carrozza
@@ -39,6 +39,13 @@ function(){
  trenoEl.innerHTML = codiceTreno;
 });
 
+
+bottoneAnnulla.addEventListener('click', 
+function(){
+ document.getElementById("nome_utente").value = "";
+ document.getElementById("km_percorso").value = "";
+ 
+});
 var prezzoScontato = prezzoBiglietto * 0.6;
 console.log(prezzoScontato);
 
