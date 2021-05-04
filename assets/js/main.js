@@ -34,7 +34,7 @@ function(){
  var prezzoBiglietto = document.getElementById("km_percorso").value;
  var prezzoKilometrico = prezzoBiglietto * 0.25;
  var prezzoScontato;
- 
+
  var etaUtente = document.querySelector(".form-select").value;
 
     if (etaUtente == 'minorenne') {
@@ -75,24 +75,4 @@ function(){
  nomeUtenteEl.innerHTML = "";
 });
 
-
-
-
-//prezzo scontato in base all'età
-    /*   if (etaUtente == 'minorenne') {
-    //va applicato uno sconto del 20% per i minorenn
-    prezzoScontato=prezzoKilometrico*0.8;
-    console.log(prezzoScontato);
-
-    } else if (etaUtente =='over65' ) {
-    //va applicato uno sconto del 40% per gli over 65.
-    prezzoScontato = prezzoKilometrico * 0.6;
-    console.log(prezzoScontato);
-
-    }  else {
-        prezzoScontato = prezzoKilometrico;
-        console.log(prezzoScontato);
-
-        }
-         */
  
